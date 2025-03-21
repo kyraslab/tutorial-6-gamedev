@@ -12,7 +12,11 @@ Memungkinkan pemain untuk melihat jumlah "lives" yang dimiliki melalui GUI dalam
 
 Menampilkan screen yang menginformasi bahwa pemain telah gagal serta memungkinkan pemain untuk kembali ke halaman utama.
 
-### 4. Minor fixes: Restart Lives
+### 4. Select Stage
+
+Memungkinkan pemain untuk memilih level yang ingin dimainkan.
+
+### 5. Minor fixes: Restart Lives
 
 Ketika pemain telah kalah, maka jumlah "lives" akan kembali ke state awal.
 
