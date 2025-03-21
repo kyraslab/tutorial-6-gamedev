@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2xfnv5r1cyvf"]
 
-[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_jn7ku"]
-[ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="2_i3lcq"]
-[ext_resource type="Texture2D" uid="uid://26wqrar1o8aw" path="res://icon.png" id="3_r3mlb"]
+[ext_resource type="Texture2D" uid="uid://db4m1e78y4gp5" path="res://assets/kenney_platformerpack/PNG/Enemies/ladybug.png" id="1_58y7j"]
+[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_narf7"]
+[ext_resource type="Script" path="res://scripts/link_button.gd" id="2_srqs6"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -17,39 +17,35 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_jn7ku")
-theme_override_font_sizes/font_size = 100
-text = "JUDUL"
+theme_override_fonts/font = ExtResource("1_narf7")
+theme_override_font_sizes/font_size = 36
+text = "My Game"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="NewGame" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_fonts/font = ExtResource("1_narf7")
+text = "New Game"
+script = ExtResource("2_srqs6")
+scene_to_load = "Level 1"
 
-[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="StageSelect" type="LinkButton" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.729412, 0, 1)
-theme_override_colors/font_hover_color = Color(0.192472, 0.603573, 0.576459, 1)
-theme_override_fonts/font = ExtResource("2_i3lcq")
-theme_override_font_sizes/font_size = 24
-text = "New Button"
-
-[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0.729412, 0, 1)
-theme_override_colors/font_hover_color = Color(0.192472, 0.603573, 0.576459, 1)
-theme_override_fonts/font = ExtResource("2_i3lcq")
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("1_narf7")
 text = "Stage Select"
+script = ExtResource("2_srqs6")
+scene_to_load = "Stage Select"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
-custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_r3mlb")
-stretch_mode = 5
+size_flags_vertical = 4
+texture = ExtResource("1_58y7j")
+stretch_mode = 4
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/NewGame" to="HBoxContainer/VBoxContainer/NewGame" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/StageSelect" to="HBoxContainer/VBoxContainer/StageSelect" method="_on_New_Game_pressed"]
